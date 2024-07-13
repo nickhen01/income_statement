@@ -20,7 +20,6 @@ Bundler.require(*Rails.groups)
 
 module IncomeStatement
   class Application < Rails::Application
-    config.exceptions_app = self.routes
     config.generators do |generate|
       generate.assets false
       generate.helper false

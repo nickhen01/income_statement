@@ -1,0 +1,28 @@
+.container.mx-auto.px-4.sm:px-6.lg:px-0.py-8.sm:py-16
+  .mx-auto.max-w-4xl.space-y-6
+    div class="px-4 sm:px-6 lg:px-8"
+      div class="sm:flex sm:items-center"
+        div class="sm:flex-auto"
+          h1 class="text-base font-semibold leading-6 text-gray-900" Statements
+        div class="mt-4 sm:ml-16 sm:mt-0 sm:flex-none"
+          = link_to "New Statement", new_statement_path, class: "button button__primary"
+
+      div class="mt-8 flow-root"
+        div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8"
+          div class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8"
+            div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5 sm:rounded-lg"
+              table class="min-w-full divide-y divide-gray-300"
+                thead class="bg-gray-50"
+                  tr
+                    th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6" Date
+                    th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900" Disposable Income
+                    th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900" Rating
+                    th scope="col" class="relative py-3.5 pl-3 pr-4 sm:pr-6"
+                tbody class="divide-y divide-gray-200 bg-white"
+                  - @statements.each do |statement|
+                    tr
+                      td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6" = l(statement.date, format: :long)
+                      td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500" = statement.disposable_income
+                      td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500" = statement.rating
+                      td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6"
+                        = link_to 'View', statement_path(statement), class: "text-indigo-600 hover:text-indigo-900"

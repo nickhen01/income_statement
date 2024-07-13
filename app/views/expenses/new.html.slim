@@ -1,0 +1,8 @@
+.container.mx-auto.px-4.sm:px-6.lg:px-0.py-8.sm:py-16
+  .mx-auto.max-w-3xl.space-y-6
+    .card.py-8.px-6
+      .flex.justify-between.items-center
+        h1.font-semibold.text-xl.text-purple-900 New Expense
+        = link_to "Back", statement_path(@statement), class: "button__underline"
+      .py-5
+        = render "form", object: [@statement, @expense]

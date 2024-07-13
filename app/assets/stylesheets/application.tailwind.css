@@ -3,3 +3,103 @@
 @tailwind components;
 @tailwind utilities;
 
+.badge {
+  @apply inline-flex items-center rounded-full px-2 py-1 text-xs font-medium ring-1 ring-inset gap-1;
+}
+
+.badge__success {
+  @apply bg-green-100 text-green-800 ring-green-600/20;
+}
+
+.badge__warning {
+  @apply bg-yellow-100 text-yellow-800 ring-yellow-600/20;
+}
+
+.badge__danger {
+  @apply bg-red-100 text-red-800 ring-red-600/20;
+}
+
+.badge__neutral {
+  @apply bg-neutral-100 text-neutral-800 ring-neutral-600/20;
+}
+
+.badge__primary {
+  @apply bg-blue-100 text-blue-800 ring-blue-600/20;
+}
+
+.button {
+  @apply items-center py-2 px-3 text-sm font-semibold shadow-sm cursor-pointer disabled:cursor-not-allowed rounded-md;
+}
+
+.button.lg {
+  @apply px-3.5 py-2.5 text-base;
+}
+
+.button__primary {
+  @apply bg-indigo-800 disabled:bg-indigo-500 text-white hover:bg-indigo-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600;
+}
+
+.button__white {
+  @apply bg-white disabled:bg-gray-50 text-gray-600 ring-1 ring-inset ring-gray-300 hover:bg-gray-50;
+}
+
+.button__icon {
+  @apply inline-flex text-gray-500 hover:text-gray-700;
+}
+
+.button__underline {
+  @apply text-gray-600 hover:underline;
+}
+.card {
+  @apply shadow-md ring-1 ring-stone-900/5 rounded-md bg-white;
+}
+
+.card__border {
+  @apply border ring-1 ring-stone-900/5 rounded-md bg-white;
+}
+.checkbox {
+  @apply border rounded text-sm font-medium cursor-pointer h-4 w-4 border-gray-300 rounded focus:ring-indigo-600 text-indigo-600;
+}
+.flash_bg__notice {
+  @apply bg-green-200;
+}
+
+.flash_bg__alert {
+  @apply bg-red-200;
+}
+
+.flash_text__notice {
+  @apply text-green-400;
+}
+
+.flash_text__alert {
+  @apply text-red-400;
+}
+.input {
+  @apply block w-full border-0 text-gray-900 sm:text-sm sm:leading-6 rounded-md py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600;
+}
+
+.input-error {
+  @apply text-red-500 text-sm mt-1;
+}
+.label {
+  @apply block text-sm font-medium leading-6 text-gray-900;
+}
+.pagy {
+  @apply flex space-x-1 font-semibold text-sm text-gray-500;
+  a {
+    @apply block rounded-lg px-3 py-1 bg-gray-200 hover:bg-gray-300;
+  }
+  label {
+    @apply inline-block whitespace-nowrap bg-gray-200 rounded-lg px-3 py-0.5;
+    input {
+      @apply bg-gray-100 border-none rounded-md;
+    }
+  }
+}
+.pagy > a:not([href]) {
+  @apply text-gray-300 bg-gray-100 cursor-default;
+  &.current {
+    @apply text-white bg-gray-400;
+  }
+}

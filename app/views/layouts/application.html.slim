@@ -4,4 +4,7 @@ html
   body
     #flash
       = render FlashComponent.new(flash: flash)
+    .flex.justify-end.py-3.px-4
+      - if user_signed_in?
+        = button_to "Sign out", destroy_user_session_path, method: :delete, class: "button__underline"
     = yield

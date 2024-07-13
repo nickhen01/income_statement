@@ -18,6 +18,7 @@
 #
 FactoryBot.define do
   factory :user do
-    
+    email { Faker::Internet.unique.email }
+    password { 'changeme' }
   end
 end

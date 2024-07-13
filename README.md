@@ -1,4 +1,4 @@
-# MY APP
+# Income Statement
 
 ## Prerequisites
 
@@ -43,3 +43,24 @@ The app is accessible on [http://localhost:5000](http://localhost:5000)
 ```shell
 bundle exec rspec
 ```
+
+## Thoughts and Improvements
+
+The app has been developed so that all requirements specified in the description are covered and with the aim of respecting the time constraint (2hrs). Therefore some optimisations have been left aside.
+
+Improvements:
+1. Use nested form in statement
+
+    Currently there are separate forms to add incomes and expenses one by one. It would be beneficial to modify the statement form into a nested form where income and expense can be added directly. Benefits: 
+   
+    
+- better UX as the user would be able to keep an overview of the statement while building it.
+- remove incomes and expenses controllers/views in the backend. I am conscious these are duplicates at the moment.
+
+2. Store in db statement #disposable income, #ratio and #rating in order to:
+
+
+- decrease computation/memory load on statements index and show page
+- remove N+1 on statements#index
+- allow for further analysis by backoffice without further computation
+- can be achieved via a single callback on statement when nested form is implemented 

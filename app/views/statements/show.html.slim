@@ -1,0 +1,39 @@
+.container.mx-auto.px-4.sm:px-6.lg:px-0.py-8.sm:py-16
+  .mx-auto.max-w-4xl.space-y-6
+    .card.py-8.px-6
+      .flex.justify-between.items-center
+        h1.text-xl.font-semibold.leading-6.text-gray-900 = "Statement #{l(@statement.date, format: :long)}"
+        = link_to 'Back', statements_path, class: "button__underline"
+      .mt-16.space-y-16
+        .space-y-8
+          .flex.justify-between.items-center
+            h2.text-base.font-semibold.leading-6.text-gray-900 Income
+            = link_to new_statement_income_path(@statement), class: "button button__white" do
+              = inline_svg_tag 'plus.svg', class: 'h-4 w-4'
+          .space-y-2
+            - @statement.incomes.each do |income|
+              .flex.justify-between.items-center
+                .text-sm = income.name
+                .text-sm.text-gray-600 = income.amount
+          .flex.justify-between.items-center.border-t.py-2
+            .text-sm.font-semibold Total income
+            .text-sm.text-gray-600 = @statement.total_income
+        .space-y-8
+          .flex.justify-between.items-center
+            h2.text-base.font-semibold.leading-6.text-gray-900 Expenditure
+            = link_to new_statement_expense_path(@statement), class: "button button__white" do
+              = inline_svg_tag 'plus.svg', class: 'h-4 w-4'
+          .space-y-2
+            - @statement.expenses.each do |expense|
+              .flex.justify-between.items-center
+                .text-sm = expense.name
+                .text-sm.text-gray-600 = expense.amount
+          .flex.justify-between.items-center.border-t.py-2
+            .text-sm.font-semibold Total expenditure
+            .text-sm.text-gray-600 = @statement.total_expense
+        .flex.justify-between.items-center
+          h2.text-base.font-semibold.leading-6.text-gray-900 Disposable Income
+          .text-gray-600 = @statement.disposable_income
+        .flex.justify-between.items-center
+          h2.text-base.font-semibold.leading-6.text-gray-900 Rating
+          .text-gray-600 = @statement.rating

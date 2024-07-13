@@ -1,0 +1,17 @@
+div class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-8"
+  .flex.min-h-full.flex-col.justify-center.py-12.sm:px-6.lg:px-8
+    .sm:mx-auto.sm:w-full.sm:max-w-md
+      h2.mt-6.text-center.text-3xl.font-bold.leading-9.tracking-tight.text-neutral-900
+        | Sign up today
+      .mt-10.sm:mx-auto.sm:w-full class="sm:max-w-[480px]"
+        .card.px-8.py-8.sm:px-12
+          = simple_form_for resource, as: resource_name, url: registration_path(resource_name) do |f|
+            .space-y-6
+              = f.input :email
+              = f.input :password
+              = f.input :password_confirmation
+              = f.submit 'Sign up', class: "flex w-full justify-center button button__primary"
+          p.mt-10.space-y-2.text-center
+            .text-sm.text-neutral-500.text-center
+              | Already signed up?
+              = link_to "Sign in here", new_session_path(resource_name), class: "ml-1 font-semibold leading-6 text-purple-600 hover:text-purple-500"

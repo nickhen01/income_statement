@@ -4,6 +4,8 @@ ruby '3.3.0'
 
 # Boot time reduction of approximately 50%
 gem 'bootsnap', require: false
+# Flexible authentication solution for Rails with Warden. (https://github.com/heartcombo/devise)
+gem "devise", "~> 4.9"
 # Enumerated attributes with I18n and ActiveRecord/Mongoid/MongoMapper support (https://github.com/brainspec/enumerize)
 gem 'enumerize', '~> 2.8', '>= 2.8.1'
 # Simple static page rendering controller (http://github.com/thoughtbot/high_voltage)
@@ -100,4 +102,3 @@ group :test do
   # Library for stubbing HTTP requests in Ruby. (http://github.com/bblimke/webmock)
   gem 'webmock', '~> 3.23'
 end
-gem "devise", "~> 4.9"
