@@ -19,12 +19,6 @@ Setup db from schema:
 bundle exec rake db:setup
 ```
 
-Generate seeds:
-
-```shell
-bundle exec rake db:seed
-```
-
 ### Start local server
 
 ```shell
