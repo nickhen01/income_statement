@@ -1,0 +1,7 @@
+doctype html
+html
+  = render 'layouts/head'
+  body
+    #flash
+      = render FlashComponent.new(flash: flash)
+    = yield
